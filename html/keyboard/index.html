@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Tutorial IME Widget</title>
+        
+        <link rel="stylesheet" href="app/stylesheets/Main.css" type="text/css">
+        
+    
+    </head>
+
+    <body onload="Main.onLoad();" onunload="Main.onUnload();">
+       
+       
+        <div id='wrapper'>
+        
+
+   <div id='left'>
+
+       <div id='menu'>
+        <ul>
+          <li> <a href="#"> Books </a></li>
+          <li> <a href="#"> Movies </a></li>
+        
+          <li> <a href="#"> Android </a></li>
+          <li> <a href="#"> Electronics </a></li>
+          <li> <a href="#"> Home,Garden and tools </a></li>
+          <li> <a href="#"> Music </a></li>
+          <li> <a href="#"> Beauty and health </a></li>
+          <li> <a href="#"> Instant Video </a></li>
+          <li> <a href="#"> Cloud drive </a></li>
+      
+        </ul>
+
+
+       </div>
+
+  </div>
+
+   <div id='right'>
+   
+   <div id="allInput">
+        
+            <form id="plain" class="window">
+                <p>Search:</p>
+                <input id="plainText" type="text" size="20" />
+            </form>
+        </div>
+        
+   </div>
+
+</div>
+
+        <!-- Temporary paths - final version will use files from widget manager path -->
+        <script language="javascript" type="text/javascript" src="$MANAGER_WIDGET/Common/API/Widget.js"></script>
+        <script language="javascript" type="text/javascript" src="$MANAGER_WIDGET/Common/API/Plugin.js"></script>
+        <script language="javascript" type="text/javascript" src="$MANAGER_WIDGET/Common/API/TVKeyValue.js"></script>
+        <script language="javascript" type="text/javascript" src="$MANAGER_WIDGET/Common/Util/Include.js"></script>
+        <script language="javascript" type="text/javascript" src="$MANAGER_WIDGET/Common/Util/Language.js"></script>
+        <script language="javascript" type="text/javascript" src="$MANAGER_WIDGET/Common/Plugin/Define.js"></script>
+        
+		<script language="javascript" type="text/javascript" src="$MANAGER_WIDGET/Common/IME/ime2.js"></script>
+		<script type="text/javascript" src="$MANAGER_WIDGET/Common/IME_XT9/ime.js"></script>
+		
+		<script type="text/javascript" src="$MANAGER_WIDGET/Common/IME_XT9/inputCommon/ime_input.js"></script>
+		    
+		<!-- Widget code -->
+		<script language="javascript" type="text/javascript" src="app/javascript/Main.js"></script>
+		<!-- Common widget code -->
+		
+		
+    </body>
+</html>
