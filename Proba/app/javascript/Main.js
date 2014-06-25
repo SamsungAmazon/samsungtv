@@ -34,26 +34,25 @@ Main.keyDown = function()
 	switch(keyCode)
 	{
 		case tvKey.KEY_RETURN:
+			history.back();
+			break;
 		case tvKey.KEY_PANEL_RETURN:
-			alert("RETURN");
 			widgetAPI.sendReturnEvent();
 			break;
 		case tvKey.KEY_LEFT:
-			alert("LEFT");
-			
+			$('.dg-prev').click();
 			break;
 		case tvKey.KEY_RIGHT:
-			alert("RIGHT");
+			$('.dg-next').click();
 			break;
 		case tvKey.KEY_UP:
-			alert("UP");
 			break;
 		case tvKey.KEY_DOWN:
-			alert("DOWN");
 			break;
 		case tvKey.KEY_ENTER:
+			location.href = $('.dg-center').attr('href');
 		case tvKey.KEY_PANEL_ENTER:
-			alert("ENTER");
+			location.href = $('.dg-center').attr('href');
 			break;
 		default:
 			alert("Unhandled key");

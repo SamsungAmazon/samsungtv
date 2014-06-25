@@ -41,8 +41,6 @@ function amazonItemSearch (keywords , searchIndex) {
     parameters.push("AssociateTag=" + AssociateTag);
     parameters.push("ResponseGroup=Large");
     
-    
-
     parameters.sort();
     var paramString = parameters.join('&');
 
@@ -52,7 +50,7 @@ function amazonItemSearch (keywords , searchIndex) {
         signature = encodeURIComponent(signature);
 
     var amazonUrl =  "http://ecs.amazonaws.com/onca/xml?" + paramString + "&Signature=" + signature;
-    console.log(amazonUrl);
+
     return amazonUrl;
 }
    
@@ -61,58 +59,34 @@ function showImage(src, width, height, alt) {
     img.src = src;
     img.width = width;
     img.height = height;
-    img.alt = alt;
-    
-    
+    img.alt = alt;  
     document.body.appendChild(img);
 }
 
-
-
-
-
-$(document).ready(function()
-		{
-		  $.ajax({
-		    type: "GET",
-		    url: amazonItemSearch("potter","Books"),
-		    dataType: "xml",
-		    success: dataReceive
-		  });
-		});
-
-
+$(document).ready(function() {
+	$.ajax({
+	    type: "GET",
+	    url: amazonItemSearch("potter","Books"),
+	    dataType: "xml",
+	    success: dataReceive
+	});
+});
 
 function dataReceive(xml){
-	
- 
-		// alert("aaaaa");
-		
-	 $(xml).find("Item").each(function(){
-		
-	//$("#output").append($(this).find("Author").text()+ "<br />");
-	
-	
-	
-	var alt = $(this).find("Title").text();
-	
-	
-			
-    var author = $(this).find("ItemAttributes").children("Author").text();
-	var title  = $(this).find("ItemAttributes").children("Title").text();
-	var image  = $(this).find("MediumImage").children("URL").text();
-		
-	
-	//showImage(image,100,100,alt);
-	
-	$("#output").append(author + " ");
-	$("#output").append(title + "<br />");
-	showImage(image,100,100,alt);
-	
-	
-		 
+	$(xml).find("Item").each(function(){
+		var alt = $(this).find("Title").text();
+		var author = $(this).find("ItemAttributes").children("Author").text();
+		var title  = $(this).find("ItemAttributes").children("Title").text();
+		var image  = $(this).find("MediumImage").children("URL").text();
+		var largeImage = $(this).find("LargeImage").children("URL").text();
+		var itemLink = $(this).find("ItemLinks").find("URL").text();
+		$("#dg-container").find('.dg-wrapper').
+		append('<a href="' + itemLink + '" >' + 
+					'<img src="' + largeImage + '" alt="' + alt + '" style="width:482px; height:316px; " />' +
+					'<div class="textDetails author">' + author + '</div>' +
+					'<div class="textDetails title">' + title + '</div>' +
+		       '</a>');		 
 	});
 	 
-	 
-	 
+	 $('#dg-container').gallery();
 };

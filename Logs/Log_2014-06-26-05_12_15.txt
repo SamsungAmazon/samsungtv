@@ -1,0 +1,22 @@
+[INFO] window.onPreShow
+[INFO] window.onShow
+[INFO] window.onFocusin
+[INFO] window.onShow
+[INFO] window.onFocusin
+[INFO] window.onShow
+ReferenceError: Can't find variable: alt
+Key pressed: 88
+sendEvent
+pType : 202
+pParam : stat=ok&type=destroy&id=Proba
+pStatus : 1
+This event is Not Register!!
+[INFO] window.onFocusin
+[INFO] window.onShow
+Key pressed: 5
+Key pressed: 5
+Key pressed: 5
+Key pressed: 5
+Key pressed: 5
+Key pressed: 5
+Key pressed: 29443
