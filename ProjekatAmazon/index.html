@@ -1,9 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Tutorial IME Widget</title>
-        
+     
         <link rel="stylesheet" href="app/stylesheets/Main.css" type="text/css">
         
     
@@ -14,6 +12,17 @@
        
         <div id='wrapper'>
         
+<div id="upper">  
+ <div id='navigation'>
+        <ul>
+          <li> <a href="#" ><div id="home">Home</div></a></li>
+          <li> <a href="#" id="search"> Search </a></li>
+          <li> <a href="#" id="cart"> Cart </a></li>
+          <li> <a href="#" id="help"> Help </a></li>
+          <li> <a href="#" id="logout"> Log out </a></li>
+       </div>
+</div>
+
 
    <div id='left'>
 
@@ -42,7 +51,7 @@
    <div id="allInput">
         
             <form id="plain" class="window">
-                <p>Search:</p>
+                
                 <input id="plainText" type="text" size="20" />
             </form>
         </div>
@@ -51,15 +60,6 @@
 
 </div>
 
-<script language="JavaScript">
-  function pprint(){
-    // If you want to use element Id
-      var a = document.getElementById('plain').value;
-      document.write(a);
-    // If you want to access by element name
-      var b = document.getElementsByName('plain')[0].value;
-      document.write(b);
- }
  </script>
 
         <!-- Temporary paths - final version will use files from widget manager path -->

@@ -73,9 +73,6 @@ return(str.substring(theleft, theright));
 
 $(document).ready(function() {
 	
-	alert(document.URL);
-	
-	alert(findID(document.URL));
 	var id = findID(document.URL);
 	$.ajax({
 		

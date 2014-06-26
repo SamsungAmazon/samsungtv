@@ -28,9 +28,10 @@ var Input  = function(id, previousId, nextId)
     
     var installStatusCallbacks = function()
     {
-    	
-    	ime.setKeypadPos(500, 159);
-        ime.setWordBoxPos(18, 6);
+    	ime.setKeySetFunc('qwerty');
+    	ime.setQWERTYPos(370, 150);
+    	ime.setKeypadPos(500, 109);
+        ime.setWordBoxPos(180, 60);
 		ime.setAnyKeyFunc(onAnyKey);
         ime.setMaxLengthFunc(onMaxLength);
         ime.setPrevEventOnLeftFunc(onLeft);
@@ -78,9 +79,9 @@ var Input  = function(id, previousId, nextId)
 
 var Main =
 {
-    elementIds : [ "plainText"],
-    inputs : [ null],
-    ready : [ false]
+    elementIds : [ "plainText","home"],
+    inputs : [ null,null],
+    ready : [ false,false]
 }
 
 Main.onLoad = function()
@@ -113,6 +114,7 @@ Main.createInputObjects = function()
         Main.inputs[index] = new Input( this.elementIds[index], this.elementIds[previousIndex], this.elementIds[nextIndex] );
     }
 }
+
 
 Main.ready = function(id)
 {
