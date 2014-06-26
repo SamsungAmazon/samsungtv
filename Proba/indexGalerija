@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Proba</title>
+
+		<!-- TODO : Common API -->
+		<script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/Widget.js"></script>
+		<script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/TVKeyValue.js"></script>
+
+		<!-- TODO : Javascript code -->
+		<script language="javascript" type="text/javascript" src="app/javascript/Main.js"></script>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha256.js"></script>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/components/enc-base64-min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script language="javascript" type="text/javascript" src="app/javascript/ItemSearch.js"></script>
+        
+
+		<!-- TODO : Style sheets code -->
+		<link rel="stylesheet" href="app/stylesheets/Main.css" type="text/css">
+
+		<!-- TODO: Plugins -->
+		<link rel="stylesheet" href="app/javascript/plugins/3DGallery/css/style.css" type="text/css">
+		<script type="text/javascript" language="javascript" src="app/javascript/plugins/3DGallery/js/modernizr.custom.53451.js"></script>
+		<script type="text/javascript" language="javascript" src="app/javascript/plugins/3DGallery/js/jquery.gallery.js"></script>
+	</head>
+
+	<body onload="Main.onLoad();" onunload="Main.onUnload();">
+        
+        
+		<!-- Dummy anchor as focus for key events -->
+		<a href="javascript:void(0);" id="anchor" onkeydown="Main.keyDown();"></a>
+		 
+	<div id="output"> 
+	 
+	  </div>
+	  <section id="dg-container" class="dg-container">
+		    <div class="dg-wrapper">
+		    </div>
+		    <nav> 
+		        <span class="dg-prev"><</span>
+		        <span class="dg-next">></span>
+		    </nav>
+		</section>
+		 
+		<!-- TODO: your code here -->
+	</body>
+</html>
