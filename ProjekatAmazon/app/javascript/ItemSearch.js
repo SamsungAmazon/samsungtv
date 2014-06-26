@@ -63,10 +63,24 @@ function showImage(src, width, height, alt) {
     document.body.appendChild(img);
 }
 
+function findID(str)
+{
+theleft = str.indexOf("=")+1;
+theright = str.lastIndexOf("&");
+alert(theleft + " " + theright);
+return(str.substring(theleft, theright));
+}
+
 $(document).ready(function() {
+	
+	alert(document.URL);
+	
+	alert(findID(document.URL));
+	var id = findID(document.URL);
 	$.ajax({
+		
 	    type: "GET",
-	    url: amazonItemSearch("potter","Books"),
+	    url: amazonItemSearch(id,"Books"),
 	    dataType: "xml",
 	    success: dataReceive
 	});

@@ -1,6 +1,7 @@
 var widgetAPI = new Common.API.Widget();
 var pluginAPI = new Common.API.Plugin();
 var tvKey = new Common.API.TVKeyValue();
+var element;
 
 var Input  = function(id, previousId, nextId)
 {
@@ -12,7 +13,7 @@ var Input  = function(id, previousId, nextId)
     }
     
     var ime = new IMEShell(id, imeReady, 'en');
-    var element = document.getElementById(id);
+    element = document.getElementById(id);
     var previousElement = document.getElementById(previousId);
     var nextElement = document.getElementById(nextId);
 
@@ -140,10 +141,10 @@ Main.ready = function(id)
 Main.keyDown = function () {
     var keyCode = event.keyCode;
     alert("Main Key code : " + keyCode);
-
+   
     switch (keyCode) {
         case tvKey.KEY_BLUE: 
-        window.document.location.href = 'indexGalerija.html';
+        window.document.location.href = 'indexGalerija.html?id=' + element.value + '&';
         	
             break;
     }
