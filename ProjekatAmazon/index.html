@@ -15,20 +15,22 @@
 <div id="upper">  
  <div id='navigation'>
         <ul>
-          <li> <a href="#" ><div id="home">Home</div></a></li>
+          <li> <a href="#" id = "home" tabindex="0">Home</a></li>
           <li> <a href="#" id="search"> Search </a></li>
           <li> <a href="#" id="cart"> Cart </a></li>
           <li> <a href="#" id="help"> Help </a></li>
           <li> <a href="#" id="logout"> Log out </a></li>
+          </ul>
        </div>
 </div>
+
 
 
    <div id='left'>
 
        <div id='menu'>
         <ul>
-          <li> <a href="#"> Books </a></li>
+         <li><div id="books" ><a href="#" > Books </a></div> </li>
           <li> <a href="#"> Movies </a></li>
         
           <li> <a href="#"> Android </a></li>
@@ -52,15 +54,13 @@
         
             <form id="plain" class="window">
                 
-                <input id="plainText" type="text" size="20" />
+                <input id="plainText" type="text" size="20"/> 
             </form>
         </div>
         
    </div>
 
 </div>
-
- </script>
 
         <!-- Temporary paths - final version will use files from widget manager path -->
         <script language="javascript" type="text/javascript" src="$MANAGER_WIDGET/Common/API/Widget.js"></script>

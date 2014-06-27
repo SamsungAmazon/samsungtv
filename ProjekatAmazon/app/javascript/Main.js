@@ -10,12 +10,12 @@ var Input  = function(id, previousId, nextId)
         installFocusKeyCallbacks();
         installStatusCallbacks();
         Main.ready(id);
-    }
+    };
     
     var ime = new IMEShell(id, imeReady, 'en');
     element = document.getElementById(id);
     var previousElement = document.getElementById(previousId);
-    var nextElement = document.getElementById(nextId);
+    var nextElement= document.getElementById(nextId);
 
     
     var installFocusKeyCallbacks = function()
@@ -24,13 +24,13 @@ var Input  = function(id, previousId, nextId)
         ime.setKeyFunc(tvKey.KEY_DOWN, function(keyCode) { nextElement.focus(); return false; } );
         ime.setKeyFunc(tvKey.KEY_RETURN, function(keyCode) { widgetAPI.sendReturnEvent(); return false; } );
         ime.setKeyFunc(tvKey.KEY_EXIT, function(keyCode) { widgetAPI.sendExitEvent(); return false; } );
-    }
+         };
     
     var installStatusCallbacks = function()
     {
     	ime.setKeySetFunc('qwerty');
-    	ime.setQWERTYPos(370, 150);
-    	ime.setKeypadPos(500, 109);
+    	ime.setQWERTYPos(340, 150);
+    	ime.setKeypadPos(400, 109);
         ime.setWordBoxPos(180, 60);
 		ime.setAnyKeyFunc(onAnyKey);
         ime.setMaxLengthFunc(onMaxLength);
@@ -39,32 +39,32 @@ var Input  = function(id, previousId, nextId)
         ime.setEnterFunc(onEnter);
         ime.setKeyFunc(tvKey.KEY_INFO, onInfoKey);
        
-    }
+    };
     
     var onAnyKey = function(keyCode)
     {
        alert("a key pressed : " + element.value );
-    }
+    };
     
     var onMaxLength = function()
     {
         Main.showMessage("Maximum length of input reached in " + element.id + ", text is " + element.value);
-    }
+    };
     
     var onLeft = function()
     {
         Main.showMessage("Left key pressed at start of " + element.id);
-    }
+    };
     
     var onComplete = function()
     {
         alert("Letter entry completed in " + element.id + ", text is " + element.value);
-    }
+    };
     
     var onEnter = function(string)
     {
        alert("Enter key pressed in " + element.id + ", string is " + string);
-    }
+    };
     
     var onInfoKey = function(keyCode)
     {
@@ -72,32 +72,32 @@ var Input  = function(id, previousId, nextId)
         ime.setString("Hello world");
         
         return true;
-    }
+    };
     
-}
+};
 
 
 var Main =
 {
-    elementIds : [ "plainText","home"],
-    inputs : [ null,null],
-    ready : [ false,false]
-}
+    elementIds : [ "plainText"],
+    inputs : [ null],
+    ready : [ false]
+};
 
 Main.onLoad = function()
 {
     alert("Main.onLoad()");
     
-    this.createInputObjects();
+ //this.createInputObjects();
     
     pluginAPI.registIMEKey();
     widgetAPI.sendReadyEvent();
-}
+};
 
 Main.onUnload = function()
 {
     alert("Main.onUnload()");
-}
+};
 
 
 Main.createInputObjects = function()
@@ -113,7 +113,7 @@ Main.createInputObjects = function()
         
         Main.inputs[index] = new Input( this.elementIds[index], this.elementIds[previousIndex], this.elementIds[nextIndex] );
     }
-}
+};
 
 
 Main.ready = function(id)
@@ -136,8 +136,9 @@ Main.ready = function(id)
     if (ready)
     {
         document.getElementById("plainText").focus();
+        //alert("focuus");
     }
-}
+};
 
 
 Main.keyDown = function () {
@@ -149,7 +150,25 @@ Main.keyDown = function () {
         window.document.location.href = 'indexGalerija.html?id=' + element.value + '&';
         	
             break;
+        case tvKey.KEY_DOWN:
+        	this.createInputObjects();
+        	break;
+        
+        case tvKey.KEY_UP: 
+        	this.elementsIds.focus();
+            alert("focus up");
+        	break;
+        	
+        case tvKey.KEY_LEFT:
+        	this.elementsIds.focus();
+            alert("LEFT FOCUS");
+        	break;
+        
+        	
     }
-}
+};
+
+
+
 
 

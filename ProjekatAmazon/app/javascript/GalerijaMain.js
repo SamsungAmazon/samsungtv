@@ -12,7 +12,7 @@ Main.onLoad = function()
 	this.enableKeys();
 	widgetAPI.sendReadyEvent();
 	
-	amazonItemSearch("potter","Books");
+	//amazonItemSearch("potter","Books");
 	
 };
 

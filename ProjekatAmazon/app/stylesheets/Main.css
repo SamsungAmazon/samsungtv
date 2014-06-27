@@ -19,9 +19,10 @@ body
 #left 
 {
 	
-	width: 300px; 
+	width: 200px; 
 	height: 100%; 
 	float: left; 
+	margin-left:-730px;
 	/*background-color: #FFCC66;*/
 	background-image: url('../images/back.jpg');
 
@@ -30,16 +31,16 @@ body
 
 #right
 {
-	margin-left: 300px;
+	margin-left: 200px;
 	 height: 100%; 
 	color:black;
 }
 
 #menu
 {
-	font-size:20px;
+	font-size:15px;
 	margin-left: -35px;
-	margin-top:-10px;
+	margin-top:-7px;
 	
 }
 
@@ -131,4 +132,18 @@ input[type=text]
 {
 	float : left;
 	padding-left:40px;
+}
+
+#home :hover
+{
+	background-color:red;
+	color: black;
+	
+}
+
+#left :hover
+{
+	background-color:red;
+	color: black;
+	
 }
