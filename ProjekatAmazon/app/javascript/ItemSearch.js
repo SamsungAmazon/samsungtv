@@ -26,9 +26,9 @@ function timestamp() {
 }
 
 function amazonItemSearch (keywords , searchIndex) {
-    var PrivateKey = "dvryatQr/NNo6UWAfw+J2y4g7L1uBTNR+gbqLTi2";
-    var PublicKey = "AKIAI2KRT4ZQMVGLRLJA";
-    var AssociateTag = "popravimiskol-20";
+    var PrivateKey = "";
+    var PublicKey = "";
+    var AssociateTag = "";
    
     var parameters = [];
     parameters.push("AWSAccessKeyId=" + PublicKey);
